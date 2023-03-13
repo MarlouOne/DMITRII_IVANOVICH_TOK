@@ -110,33 +110,44 @@ def algoritm_8():
 
 
 
+def largest_prime_factor(number : int) -> int: 
+    i = 2 
+    while i * i <= number: 
+        if number % i: 
+            i += 1 
+        else: 
+            number //= i 
+    return number 
+
 
 # Алгоритм 9
-def algoritm_9():
-    M = int(input('Введите M: '))
-    n = int(input('Введите n (степень): '))
+def algoritm_9() -> None:
+    M = 5
+    N = 10
+    print(M, '^2 %', N, '=', (M**2)%N )
+    C = (M**2)%N
     
-    c = (M**2)%n
-    list_p = p_q(n)
-    print(list_p)
-    pq = find_p_q(n, list_p)
-    print(pq[0],pq[1])
-
-
-def p_q(n):
-    all_p = [2,3]
+    p = largest_prime_factor(N)
+    q = int( N/p )
     
-    for i in range(2,int(n/2)):
-        flag = True
-        for p in all_p:
-            if i%p == 0:
-#                print(i,p,i%p)
-                flag = False
-        if flag == True:
-            all_p.append(i)
-    return all_p
+    
+    m_p1 = int(pow( C,(p+1)/4 ) // p)  # m_p1 - 0 
+    m_q1 = int(pow( C,(q+1)/4 ) // q)  # m_q1 - 1
+    m_p2 = p - m_p1                    # m_p2 - 2
+    m_q2 = q - m_q1                    # m_q2 - 3
 
+    # a = pow(p, -1,  q)
+    # b = pow(q, -1,  p)
+    
+    a = pow(q, -1,  p) * q
+    b = pow(p, -1,  q) * p
+    
+    m_1 = (m_p1 * a + m_q1 * b) % N
+    m_2 = (m_p1 * a + m_q2 * b) % N
+    m_3 = (m_p2 * a + m_q1 * b) % N
+    m_4 = (m_p2 * a + m_q2 * b) % N
 
+    print( m_1, m_2, m_3, m_4)
 
 
 def find_p_q(n,list_p):
