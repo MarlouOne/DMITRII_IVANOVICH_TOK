@@ -122,15 +122,16 @@ def largest_prime_factor(number : int) -> int:
 
 # Алгоритм 9
 def algoritm_9() -> None:
-    M = 5
+    # M = 5
     N = 10
-    print(M, '^2 %', N, '=', (M**2)%N )
-    C = (M**2)%N
+    # print(M, '^2 %', N, '=', (M**2)%N )
+    C = 5
     
     p = largest_prime_factor(N)
     q = int( N/p )
     
-    
+    print(N , '=', p, '*', q)
+        
     m_p1 = int(pow( C,(p+1)/4 ) // p)  # m_p1 - 0 
     m_q1 = int(pow( C,(q+1)/4 ) // q)  # m_q1 - 1
     m_p2 = p - m_p1                    # m_p2 - 2
@@ -150,40 +151,32 @@ def algoritm_9() -> None:
     print( m_1, m_2, m_3, m_4)
 
 
-def find_p_q(n,list_p):
-    
-    for p in list_p:
-        for q in list_p:
-            if p*q == n:
-                return [p,q]
-                break
 
 
 
+# print('-'*20, 'Алгоритм 1 Сложение', '-'*20)
+# print(algoritm_1())
 
-print('-'*20, 'Алгоритм 1 Сложение', '-'*20)
-print(algoritm_1())
+# print('-'*20, 'Алгоритм 2 Вычетание', '-'*20)
+# print(algoritm_2())
 
-print('-'*20, 'Алгоритм 2 Вычетание', '-'*20)
-print(algoritm_2())
+# print('-'*20, 'Алгоритм 3 Умножение', '-'*20)
+# print(algoritm_3())
 
-print('-'*20, 'Алгоритм 3 Умножение', '-'*20)
-print(algoritm_3())
+# print('-'*20, 'Алгоритм 4 Деление', '-'*20)
+# print(algoritm_4())
 
-print('-'*20, 'Алгоритм 4 Деление', '-'*20)
-print(algoritm_4())
+# print('-'*20, 'Алгоритм 5 Мантгомери', '-'*20)
+# print(algoritm_5())
 
-print('-'*20, 'Алгоритм 5 Мантгомери', '-'*20)
-print(algoritm_5())
+# print('-'*20, 'Алгоритм 6 Умножение N-вычетов', '-'*20)
+# print(algoritm_6())
 
-print('-'*20, 'Алгоритм 6 Умножение N-вычетов', '-'*20)
-print(algoritm_6())
+# print('-'*20, 'Алгоритм 7 Произведение чисел', '-'*20)
+# algoritm_7()
 
-print('-'*20, 'Алгоритм 7 Произведение чисел', '-'*20)
-algoritm_7()
-
-print('-'*20, 'Алгоритм 8 Модульное возведение в степень', '-'*20)
-print(algoritm_8())
+# print('-'*20, 'Алгоритм 8 Модульное возведение в степень', '-'*20)
+# print(algoritm_8())
 
 print('-'*20, 'Алгоритм 9 Извлечение квадратного корня', '-'*20)
 algoritm_9()

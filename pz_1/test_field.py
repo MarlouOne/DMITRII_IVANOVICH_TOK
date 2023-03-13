@@ -34,10 +34,6 @@ def get_min_degree(base : int, mod : int) -> int: # Находим наимен�
         
     return min_degree
             
-        
-    print( base, mod)
-    print( gcd( base, mod) )
-    print( lcm( base, mod) )
 
 def algoritm_9_misha(number : int,  degree : int, mod : int) -> None:   
     # M = int(input('Введите M: ')) # Число
